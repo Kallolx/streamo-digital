@@ -1,0 +1,28 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#1E1E1E"/>
+  
+  <!-- Gradient overlay -->
+  <rect width="300" height="300" fill="url(#paint0_radial)"/>
+  
+  <!-- Abstract shapes -->
+  <circle cx="150" cy="180" r="80" fill="#3B82F6" fill-opacity="0.1"/>
+  <circle cx="200" cy="120" r="60" fill="#1DB954" fill-opacity="0.1"/>
+  
+  <!-- Person silhouette -->
+  <circle cx="150" cy="100" r="50" fill="#333333"/>
+  <path d="M100 230C100 196.863 126.863 170 160 170H180C213.137 170 240 196.863 240 230V300H100V230Z" fill="#333333"/>
+  
+  <!-- Microphone -->
+  <rect x="140" y="60" width="20" height="40" rx="10" fill="#3B82F6"/>
+  <path d="M150 100V120" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M130 120H170" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Defs -->
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(150 150) rotate(90) scale(150)">
+      <stop stop-color="#3B82F6" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg> 
