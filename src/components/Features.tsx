@@ -59,7 +59,9 @@ const Features = () => {
       title: "Global Distribution",
       description: "Reach millions of listeners worldwide with distribution to 150+ streaming platforms including Spotify, Apple Music, Amazon Music, and more.",
       icon: (
-        <img src="/icons/earth.png" alt="Global Distribution" className="w-12 h-12 rounded-full" />
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/icons/earth.png" alt="Global Distribution" className="w-full h-full object-contain" />
+        </div>
       ),
       bgImage: "url('/images/feature-globe.jpg')",
       color: "from-green-500/20 to-green-500/5",
@@ -69,7 +71,9 @@ const Features = () => {
       title: "Keep 100% Rights",
       description: "Maintain complete ownership of your music. We never take any rights to your content, giving you full creative control and freedom.",
       icon: (
-        <img src="/icons/crown.png" alt="Global Distribution" className="w-12 h-12 rounded-full" />
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/icons/crown.png" alt="Keep 100% Rights" className="w-full h-full object-contain" />
+        </div>
       ),
       bgImage: "url('/images/feature-rights.jpg')",
       color: "from-purple-500/20 to-purple-500/5",
@@ -79,7 +83,9 @@ const Features = () => {
       title: "Weekly Payments",
       description: "Get paid weekly with transparent reporting. Track your streams and earnings in real-time with our intuitive analytics dashboard.",
       icon: (
-        <img src="/icons/visa.png" alt="Weekly Payments" className="w-12 h-12 rounded-full" />
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/icons/visa.png" alt="Weekly Payments" className="w-full h-full object-contain" />
+        </div>
       ),
       bgImage: "url('/images/feature-payments.jpg')",
       color: "from-blue-500/20 to-blue-500/5",
@@ -89,7 +95,9 @@ const Features = () => {
       title: "Marketing & Promotion",
       description: "Get featured on playlists, social media campaigns, and promotional opportunities to boost your music's visibility and reach new fans.",
       icon: (
-        <img src="/icons/chart.png" alt="Marketing & Promotion" className="w-12 h-12 rounded-full" />
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/icons/chart.png" alt="Marketing & Promotion" className="w-full h-full object-contain" />
+        </div>
       ),
       bgImage: "url('/images/feature-marketing.jpg')",
       color: "from-red-500/20 to-red-500/5",
@@ -140,13 +148,13 @@ const Features = () => {
               
               <div className={`h-full backdrop-blur-sm bg-black/50 p-4 sm:p-4 md:p-5 lg:p-6 flex flex-col ${activeFeature === index ? 'ring-2 ring-green-500' : ''}`}>
                 <div className="flex items-center mb-3 md:mb-4">
-                  <div className="mr-3">{feature.icon}</div>
+                  <div className="flex-shrink-0 mr-3">{feature.icon}</div>
                   <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">{feature.title}</h3>
                 </div>
                 <p className="text-sm text-gray-300 flex-grow">{feature.description}</p>
                 
                 {/* Call to action section */}
-                <div className="mt-3 sm:mt-4 md:mt-6 pt-2 sm:pt-3 md:pt-4 border-t border-white/10">
+                <div className="mt-3 sm:mt-4 md:mt-6 pt-2 sm:pt-3 md:pt-4">
                   <div className="flex flex-col gap-1 sm:gap-2">
                     <div className="text-xs text-gray-400">
                       {index === 0 ? '150+ streaming platforms' : 

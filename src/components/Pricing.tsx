@@ -21,7 +21,8 @@ const Pricing = () => {
       ],
       cta: "Get Started",
       popular: true,
-      tier: 1
+      tier: 1,
+      link: "https://apply.streamodigital.com/"
     },
     {
       name: "Artist",
@@ -39,7 +40,8 @@ const Pricing = () => {
       ],
       cta: "Choose Plan",
       popular: false,
-      tier: 2
+      tier: 2,
+      link: "https://apply.streamodigital.com/"
     },
     {
       name: "Record Label",
@@ -59,7 +61,8 @@ const Pricing = () => {
       ],
       cta: "Choose Plan",
       popular: false,
-      tier: 3
+      tier: 3,
+      link: "https://apply.streamodigital.com/"
     }
   ]
 
@@ -140,8 +143,11 @@ const Pricing = () => {
                 </ul>
                 
                 {/* CTA Button */}
-                <button 
-                  className={`w-full py-2 rounded-lg font-bold text-white text-sm transition-all duration-300 ${
+                <a 
+                  href="https://apply.streamodigital.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-2 rounded-lg font-bold text-white text-sm transition-all duration-300 text-center ${
                     plan.tier === 1 
                       ? 'bg-gradient-to-r from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 shadow-md hover:shadow-green-500/25' 
                       : plan.tier === 2
@@ -150,7 +156,7 @@ const Pricing = () => {
                   }`}
                 >
                   {plan.cta}
-                </button>
+                </a>
                 
               </div>
             </motion.div>
@@ -158,16 +164,26 @@ const Pricing = () => {
         </div>
         
         <div className="mt-8 sm:mt-12 text-center">
-          <div className="bg-gradient-to-br from-black/60 to-green-950/20 backdrop-blur-md p-4 sm:p-6 rounded-2xl max-w-3xl mx-auto border border-green-500/10">
+          <div className="bg-gradient-to-br from-black/60 to-green-950/20 backdrop-blur-md p-4 sm:p-6 rounded-2xl max-w-3xl mx-auto">
             <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Get Started?</span></h3>
             <p className="text-gray-300 text-sm mb-4">Join thousands of artists and labels who trust Streamo Digital with their music.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 text-white font-bold px-5 py-2 rounded-lg shadow-md hover:shadow-green-500/25 transition-all duration-300 text-sm">
+              <a 
+                href="https://apply.streamodigital.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 text-white font-bold px-5 py-2 rounded-lg shadow-md hover:shadow-green-500/25 transition-all duration-300 text-sm text-center"
+              >
                 Start For Free
-              </button>
-              <button className="bg-transparent border border-green-500/50 hover:border-green-400 text-white font-bold px-5 py-2 rounded-lg shadow-md hover:shadow-green-500/10 transition-all duration-300 text-sm">
+              </a>
+              <a 
+                href="https://apply.streamodigital.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-transparent border border-green-500/50 hover:border-green-400 text-white font-bold px-5 py-2 rounded-lg shadow-md hover:shadow-green-500/10 transition-all duration-300 text-sm text-center"
+              >
                 Schedule a Demo
-              </button>
+              </a>
             </div>
           </div>
           

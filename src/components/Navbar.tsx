@@ -108,7 +108,9 @@ const Navbar = () => {
           {/* Apply Button - Right */}
           <div className="hidden md:flex items-center">
             <Link 
-              href="/apply" 
+              href="https://apply.streamodigital.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white font-bold px-6 py-2.5 rounded-full text-base hover:bg-green-500 transition-colors duration-200"
             >
               Apply
@@ -217,7 +219,9 @@ const Navbar = () => {
                   
                   <div className="pt-6 mt-6 border-t border-gray-800">
                     <Link
-                      href="/apply"
+                      href="https://apply.streamodigital.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="block w-full bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-green-500 transition-colors duration-200 text-center"
                       onClick={() => setIsMenuOpen(false)}
                     >

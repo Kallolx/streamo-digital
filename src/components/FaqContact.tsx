@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const FaqContact = () => {
   const [activeQuestion, setActiveQuestion] = useState<number | null>(0)
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,7 +25,7 @@ const FaqContact = () => {
     e.preventDefault()
     // Form submission logic would go here
     console.log('Form submitted:', formData)
-    alert('Thanks for your message! We\'ll get back to you soon.')
+    setShowSuccessModal(true)
     setFormData({
       name: '',
       email: '',
@@ -32,6 +33,43 @@ const FaqContact = () => {
       message: ''
     })
   }
+
+  // Success Modal Component
+  const SuccessModal = () => (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-0"
+    >
+      <div className="fixed inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setShowSuccessModal(false)} />
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        className="relative bg-gradient-to-br from-black/80 to-green-950/30 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-green-500/20 max-w-md w-full shadow-xl"
+      >
+        <div className="text-center">
+          {/* Success Icon */}
+          <div className="mx-auto w-16 h-16 sm:w-20 sm:h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+            <svg className="w-8 h-8 sm:w-10 sm:h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Message Sent!</h3>
+          <p className="text-gray-300 mb-6">Thank you for reaching out. We'll get back to you as soon as possible.</p>
+          
+          <button
+            onClick={() => setShowSuccessModal(false)}
+            className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 shadow-md hover:shadow-green-500/25 transition-all duration-300"
+          >
+            Close
+          </button>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
 
   const faqs = [
     {
@@ -248,6 +286,11 @@ const FaqContact = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      <AnimatePresence>
+        {showSuccessModal && <SuccessModal />}
+      </AnimatePresence>
     </section>
   )
 }

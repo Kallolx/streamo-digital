@@ -1,33 +1,9 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 const Testimonials = () => {
-  const [activeTestimonial, setActiveTestimonial] = useState(0)
-  const testimonialsRef = useRef<HTMLDivElement>(null)
-  
-  // Auto-rotate testimonials
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTestimonial(prev => (prev + 1) % testimonials.length)
-    }, 5000)
-    
-    return () => clearInterval(interval)
-  }, [])
-  
-  // Scroll to active testimonial
-  useEffect(() => {
-    if (testimonialsRef.current) {
-      const scrollAmount = activeTestimonial * testimonialsRef.current.offsetWidth
-      testimonialsRef.current.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth'
-      })
-    }
-  }, [activeTestimonial])
-
   const testimonials = [
     {
       name: "Sarah Johnson",
@@ -48,13 +24,6 @@ const Testimonials = () => {
       role: "Singer-Songwriter",
       image: "/images/testimonial3.svg",
       quote: "The marketing support from Streamo Digital got my latest single featured on major playlists. Their team genuinely cares about artist success and goes above and beyond.",
-      rating: 5
-    },
-    {
-      name: "David Chen",
-      role: "Producer & DJ",
-      image: "/images/testimonial4.svg",
-      quote: "I've tried several distribution services, but Streamo Digital offers the best combination of reach, analytics, and payment terms. Their platform is intuitive and powerful.",
       rating: 5
     }
   ]
@@ -112,86 +81,67 @@ const Testimonials = () => {
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Hear from artists and labels who have transformed their music careers with Streamo Digital.</p>
           </div>
 
-          {/* Redesigned Testimonial Cards */}
-          <div className="relative">
-            <div 
-              ref={testimonialsRef}
-              className="flex overflow-x-hidden snap-x snap-mandatory scrollbar-hide"
-            >
-              {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index}
-                  className="min-w-full snap-center px-4"
-                >
-                  <motion.div 
-                    className="relative bg-gradient-to-br from-black/60 to-black/20 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    {/* Decorative elements */}
-                    <div className="absolute -top-12 -right-12 w-24 h-24 bg-green-500/10 rounded-full blur-xl"></div>
-                    <div className="absolute -bottom-12 -left-12 w-24 h-24 bg-purple-500/10 rounded-full blur-xl"></div>
-                    
-                    {/* Quote mark */}
-                    <div className="absolute top-4 right-6 opacity-10">
-                      <svg className="w-20 h-20 text-green-500" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                      </svg>
-                    </div>
-                    
-                    <div className="flex flex-col items-center">
-                      {/* Rating */}
-                      <div className="flex items-center mb-4">
-                        {[...Array(5)].map((_, i) => (
-                          <svg 
-                            key={i} 
-                            className={`w-5 h-5 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-400'}`} 
-                            fill="currentColor" 
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
-                      </div>
-                      
-                      {/* Quote */}
-                      <blockquote className="text-base sm:text-lg md:text-xl text-white italic mb-6 text-center max-w-2xl">"{testimonial.quote}"</blockquote>
-                      
-                      {/* Profile */}
-                      <div className="flex items-center mt-2">
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-green-500/30 to-purple-500/30 p-0.5">
-                          <img 
-                            src={testimonial.image} 
-                            alt={testimonial.name}
-                            className="w-full h-full object-cover rounded-full"
-                          />
-                        </div>
-                        <div className="ml-4 text-left">
-                          <h4 className="text-lg sm:text-xl font-bold text-white">{testimonial.name}</h4>
-                          <p className="text-green-400 text-sm sm:text-base">{testimonial.role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
+          {/* Redesigned Testimonial Cards - 3 Card Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="bg-gradient-to-br from-black/60 to-black/20 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -10, 
+                  boxShadow: '0 20px 40px -10px rgba(29, 185, 84, 0.2)',
+                }}
+              >
+                {/* Decorative elements */}
+                <div className="absolute -top-12 -right-12 w-24 h-24 bg-green-500/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-12 -left-12 w-24 h-24 bg-purple-500/10 rounded-full blur-xl"></div>
+                
+                {/* Quote mark */}
+                <div className="absolute top-4 right-6 opacity-10">
+                  <svg className="w-20 h-20 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
                 </div>
-              ))}
-            </div>
-
-            {/* Testimonial Navigation */}
-            <div className="flex justify-center mt-6 sm:mt-8 gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all ${
-                    activeTestimonial === index ? 'bg-green-500 w-6 sm:w-8' : 'bg-white/30'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
+                
+                <div className="flex flex-col">
+                  {/* Rating */}
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg 
+                        key={i} 
+                        className={`w-5 h-5 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-400'}`} 
+                        fill="currentColor" 
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  
+                  {/* Quote */}
+                  <blockquote className="text-base sm:text-lg text-white italic mb-6">"{testimonial.quote}"</blockquote>
+                  
+                  {/* Profile */}
+                  <div className="mt-auto flex items-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-green-500/30 to-purple-500/30 p-0.5">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </div>
+                    <div className="ml-4 text-left">
+                      <h4 className="text-lg font-bold text-white">{testimonial.name}</h4>
+                      <p className="text-green-400 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
 
@@ -259,7 +209,7 @@ const Testimonials = () => {
               
               <div className="mt-10 sm:mt-12 md:mt-16 text-center">
                 <button className="bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-green-500 transition-colors duration-200 shadow-lg hover:shadow-green-500/20">
-                  Start Your Journey Today
+                 <a href="https://apply.streamodigital.com/" target="_blank" rel="noopener noreferrer"> Start Your Journey Today</a>
                 </button>
               </div>
             </div>

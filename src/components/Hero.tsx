@@ -3,7 +3,7 @@ import { IconCloud } from '@/components/magicui/icon-cloud';
 
 const Hero = () => {
   return (
-    <div className="relative pt-16 pb-24 lg:pt-16 lg:pb-32 font-dm-sans">
+    <div className="relative pt-8 pb-24 lg:pt-8 lg:pb-32 font-dm-sans">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl overflow-hidden">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
           {/* Text Section */}
@@ -16,11 +16,9 @@ const Hero = () => {
                 Get your music on all major streaming platforms worldwide. Keep 100% of your rights.
               </p>
               <div className="flex flex-wrap gap-5 justify-center lg:justify-start">
-                <button className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white rounded-full font-bold transition-all duration-200 shadow-lg hover:shadow-green-500/20 text-lg">
-                  Get Started Now
-                </button>
-                <button className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full font-medium hover:bg-white/10 transition-all duration-200 border-2 border-white/20 hover:border-white/30 text-lg">
-                  Learn More
+                <button
+                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white rounded-full font-bold transition-all duration-200 shadow-lg hover:shadow-green-500/20 text-lg">
+                 <a href="https://auth.streamodigital.com/oauth2/authorize?client_id=09d6f1c4-ca32-4f15-9f8b-3e78e416e9c9&response_type=code&redirect_uri=https://backstage.streamodigital.com/sign-in&env=prod&locale=en&from=https://backstage.streamodigital.com" target="_blank" rel="noopener noreferrer"> Get Started Now</a>
                 </button>
               </div>
             </div>
