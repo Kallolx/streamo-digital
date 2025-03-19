@@ -2,9 +2,11 @@
 
 import { ArrowUpIcon } from 'lucide-react'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const [openOffice, setOpenOffice] = useState(0)
   
   const officeLocations = [
     {
@@ -37,6 +39,25 @@ const Footer = () => {
         "Kathmandu, 44600, Nepal"
       ]
     }
+  ]
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Distribution", href: "/distribution" },
+    { name: "Marketing", href: "/marketing" },
+    { name: "Analytics", href: "/analytics" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
+    { name: "FAQ", href: "/faq" }
+  ]
+
+  const legalLinks = [
+    { name: "Terms & Conditions", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Cookie Policy", href: "/cookies" },
   ]
 
   const socialLinks = [
@@ -78,76 +99,147 @@ const Footer = () => {
     }
   ]
 
+  // Handle toggling the office locations
+  const toggleOffice = (index: number) => {
+    setOpenOffice(openOffice === index ? -1 : index)
+  }
+
   return (
-    <footer className="backdrop-blur-md border-t border-gray-800/50 mt-12 sm:mt-16 md:mt-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {/* Company info */}
-          <div>
-            <div className="mb-4">
-              <img src="/logo.svg" alt="Streamo Digital Logo" className="w-16 h-16 sm:w-20 sm:h-20" />
-            </div>
-            <p className="text-gray-400 text-sm mb-6 max-w-md">
-              Empowering independent artists and labels with global music distribution, marketing tools, and analytics to help you grow your career while keeping 100% of your rights.
-            </p>
-            
-            {/* Social links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 transition-colors"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-          
-          {/* Office Locations */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:col-span-2">
-            {officeLocations.map((office) => (
-              <div key={office.title}>
-                <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">
-                  {office.title}
-                </h3>
-                <div className="space-y-2">
-                  {office.address.map((line, index) => (
-                    <p key={index} className="text-gray-400 text-sm">
-                      {line}
-                    </p>
+    <footer className="mt-12 sm:mt-16 md:mt-20 backdrop-blur-sm">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Main footer section */}
+        <div className="pt-12 pb-8">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Company card - Boxed */}
+            <div className="lg:w-1/3">
+              <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-gray-700/30 p-6 hover:bg-black/40 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <img src="/logo.svg" alt="Streamo Digital Logo" className="w-12 h-12" />
+                  <h2 className="ml-3 text-xl font-bold text-white">Streamo Digital</h2>
+                </div>
+                <p className="text-gray-300 mb-5 text-sm">
+                  Empowering independent artists and labels with global music distribution, marketing tools, and analytics to help you grow your career while keeping 100% of your rights.
+                </p>
+                
+                {/* Social links */}
+                <div className="flex flex-wrap gap-3">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-white transition-all bg-gray-800/50 hover:bg-green-500/80 p-2 rounded-lg"
+                      aria-label={social.name}
+                    >
+                      {social.icon}
+                    </a>
                   ))}
                 </div>
               </div>
+            </div>
+            
+            {/* Navigation Links & Office Locations */}
+            <div className="lg:w-2/3 lg:pl-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Navigation Links */}
+                <div className="md:col-span-1">
+                  <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+                  <ul className="space-y-2">
+                    {navLinks.slice(0, 5).map((link) => (
+                      <li key={link.name}>
+                        <Link href={link.href} className="text-gray-300 hover:text-green-400 text-sm hover:underline transition-colors">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="md:col-span-1">
+                  <h3 className="text-white font-semibold text-lg mb-4">Resources</h3>
+                  <ul className="space-y-2">
+                    {navLinks.slice(5).map((link) => (
+                      <li key={link.name}>
+                        <Link href={link.href} className="text-gray-300 hover:text-green-400 text-sm hover:underline transition-colors">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Office Locations - Compact */}
+                <div className="md:col-span-1">
+                  <h3 className="text-white font-semibold text-lg mb-4">Global Offices</h3>
+                  <div className="space-y-4">
+                    {officeLocations.map((office, index) => (
+                      <div key={office.title} className="border-b border-gray-700/10 last:border-b-0 pb-2 last:pb-0">
+                        <div 
+                          onClick={() => toggleOffice(index)}
+                          className="flex items-center justify-between cursor-pointer text-sm font-medium text-gray-200 hover:text-green-400"
+                        >
+                          {office.title}
+                          <span className={`transition-transform ${openOffice === index ? 'rotate-180' : ''}`}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </span>
+                        </div>
+                        {openOffice === index && (
+                          <div className="pl-2 mt-2 space-y-1">
+                            {office.address.map((line, lineIndex) => (
+                              <p key={lineIndex} className="text-gray-400 text-xs">
+                                {line}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Legal Links - Border removed */}
+        <div className="py-4">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-xs text-gray-400 hover:text-green-400 transition-colors"
+              >
+                {link.name}
+              </Link>
             ))}
           </div>
         </div>
         
-        {/* Bottom section */}
-        <div className="mt-12 pt-6 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
-            <p className="text-gray-400 text-sm">
-              &copy; {currentYear} Streamo Digital. All rights reserved.
-            </p>
-            <span className="hidden md:inline text-gray-600">|</span>
-            <a 
-              href="https://webbytestudio.unaux.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-green-400 text-sm transition-colors"
-            >
-              Developed by WebbyteStudio
-            </a>
-          </div>
+        {/* Bottom section with copyright */}
+        <div className="border-t border-gray-700/30 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4 md:mb-0">
+              <p className="text-gray-400 text-sm">
+                &copy; {currentYear} Streamo Digital. All rights reserved.
+              </p>
+              <span className="hidden sm:inline text-gray-700">|</span>
+              <a 
+                href="https://webbytestudio.unaux.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 text-sm transition-colors"
+              >
+                Developed by WebbyteStudio
+              </a>
+            </div>
 
-          <div className="mt-4 md:mt-0">
             <a 
               href="#top" 
-              className="inline-flex items-center text-sm text-gray-400 hover:text-green-400 transition-colors"
+              className="inline-flex items-center text-sm font-medium text-black hover:text-white transition-colors bg-gradient-to-r from-green-400/90 to-green-500/90 hover:from-green-500 hover:to-green-600 px-4 py-2 rounded-full"
             >
               <ArrowUpIcon className="w-4 h-4 mr-2" />
               Back to top
