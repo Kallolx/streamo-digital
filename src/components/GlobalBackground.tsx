@@ -7,7 +7,7 @@ const GlobalBackground = () => {
   useEffect(() => {
     // Apply styles to the body element
     document.body.style.backgroundImage = 'url(/bg-image.jpg)';
-    document.body.style.backgroundSize = '1600px 900px';
+    document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center top';
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundAttachment = 'fixed';
