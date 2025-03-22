@@ -4,7 +4,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import MusicDistributionForm from '@/components/MusicDistributionForm'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { handleHashScroll, scrollToSection } from '@/utils/scrollUtils'
+import { usePageLoading } from '@/hooks/usePageLoading'
 
 const allPlatforms = [
   {
@@ -15,7 +17,7 @@ const allPlatforms = [
   },
   {
     name: 'Apple Music',
-    icon: '/icons/apple-music.png',
+    icon: '/icons/itunes.png',
     color: '#FA466A',
     features: ['Connect Integration', 'Artist Page', 'Trending Charts']
   },
@@ -32,42 +34,6 @@ const allPlatforms = [
     features: ['Content ID', 'Artist Channel', 'Analytics Suite']
   },
   {
-    name: 'Amazon Music',
-    icon: '/icons/amazon.png',
-    color: '#00A8E1',
-    features: ['Prime Integration', 'HD Streaming', 'Alexa Support']
-  },
-  {
-    name: 'SoundCloud',
-    icon: '/icons/soundcloud.png',
-    color: '#FF5500',
-    features: ['Direct Upload', 'Stats Pro', 'Monetization']
-  },
-  {
-    name: 'Deezer',
-    icon: '/icons/deezer.png',
-    color: '#FF0092',
-    features: ['Flow Technology', 'Artist Insights', 'Playlist Submission']
-  },
-  {
-    name: 'Pandora',
-    icon: '/icons/pandora.png',
-    color: '#3668FF',
-    features: ['Music Genome', 'Artist Marketing', 'Listener Stats']
-  },
-  {
-    name: 'iHeartRadio',
-    icon: '/icons/iheartradio.png',
-    color: '#C6002B',
-    features: ['Radio Airplay', 'Live Events', 'Fan Insights']
-  },
-  {
-    name: 'Tidal',
-    icon: '/icons/tidal.png',
-    color: '#000000',
-    features: ['Hi-Fi Quality', 'Artist Radio', 'Direct Artist Payouts']
-  },
-  {
     name: 'Instagram',
     icon: '/icons/instagram.png',
     color: '#E4405F',
@@ -78,28 +44,50 @@ const allPlatforms = [
     icon: '/icons/facebook.png',
     color: '#1877F2',
     features: ['Sound Collection', 'Creator Studio', 'Monetization']
-  }
+  },
+  {
+    name: 'SoundCloud',
+    icon: '/icons/soundcloud.png',
+    color: '#FF5500',
+    features: ['Direct Upload', 'Stats Pro', 'Monetization']
+  },
+  {
+    name: 'Twitter',
+    icon: '/icons/twitter.png',
+    color: '#3668FF',
+    features: ['Music Genome', 'Artist Marketing', 'Listener Stats']
+  },
+
+  
+  {
+    name: 'Gaana',
+    icon: '/icons/ganna.png',
+    color: '#FF0092',
+    features: ['Flow Technology', 'Artist Insights', 'Playlist Submission']
+  },
 ]
 
 export default function MusicDistributionPage() {
   const [showAllPlatforms, setShowAllPlatforms] = useState(false)
   const displayedPlatforms = showAllPlatforms ? allPlatforms : allPlatforms.slice(0, 6)
 
+  // Initialize page loading
+  usePageLoading();
+  
+  // Handle hash scrolling when the page loads
+  useEffect(() => {
+    handleHashScroll();
+  }, []);
+
+  // Handle Compare button click
+  const handleCompareClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    // Navigate to services page with comparison hash
+    window.location.href = '/services#comparison';
+  };
+
   return (
-    <main className="min-h-screen bg-black text-white relative overflow-x-hidden w-full">
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(/bg-image.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      ></div>
-      <div className="absolute inset-0 bg-black/60 z-0"></div>
-      {/* Green to white gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-white/5 z-10 pointer-events-none"></div>
-      
+    <main className="min-h-screen text-white relative overflow-x-hidden w-full">
       <div className="relative z-20">
         <Navbar />
         <div className="pt-20 md:pt-24">
@@ -125,12 +113,8 @@ export default function MusicDistributionPage() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
                 {displayedPlatforms.map((platform, index) => (
-                  <motion.div
+                  <div
                     key={platform.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="bg-gradient-to-br from-black/60 to-black/20 backdrop-blur-md rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 border border-white/10 hover:border-green-500/50 transition-colors duration-300"
                   >
                     <div className="flex items-center mb-2 md:mb-4">
@@ -149,7 +133,7 @@ export default function MusicDistributionPage() {
                         </li>
                       ))}
                     </ul>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
               
@@ -235,6 +219,34 @@ export default function MusicDistributionPage() {
                   <p className="text-sm md:text-base text-gray-300">We distribute your music to 50+ platforms worldwide</p>
                 </motion.div>
               </div>
+            </div>
+          </section>
+
+          {/* Compare Section */}
+          <section className="py-8 md:py-16 bg-gradient-to-br from-black/60 to-black/40">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-white">
+                  Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Streamo Digital</span>?
+                </h2>
+                <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+                  Compare our services with traditional distributors and record labels to see why thousands of independent artists choose us
+                </p>
+                <motion.button
+                  onClick={handleCompareClick}
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white rounded-full font-bold transition-all duration-200 shadow-lg hover:shadow-green-500/20 text-base sm:text-lg"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Compare Services
+                </motion.button>
+              </motion.div>
             </div>
           </section>
 

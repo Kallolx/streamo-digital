@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { scrollToSection } from '@/utils/scrollUtils';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,6 +51,12 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
+  // Handle clicking the Compare button
+  const handleCompareClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    scrollToSection('comparison', setIsMenuOpen);
+  };
+
   return (
     <div className="w-full flex justify-center fixed top-0 z-50">
       <nav className={`w-full transition-all duration-300 ${
@@ -91,17 +98,18 @@ const Navbar = () => {
             >
               Services
             </Link>
+            <a 
+              href="#comparison" 
+              onClick={handleCompareClick}
+              className="text-white hover:text-green-400 transition-colors duration-200 text-base font-medium cursor-pointer"
+            >
+              Compare
+            </a>
             <Link 
               href="/blog" 
               className="text-white hover:text-green-400 transition-colors duration-200 text-base font-medium"
             >
               Blog
-            </Link>
-            <Link 
-              href="/about" 
-              className="text-white hover:text-green-400 transition-colors duration-200 text-base font-medium"
-            >
-              About US
             </Link>
           </div>
 
@@ -202,19 +210,19 @@ const Navbar = () => {
                   >
                     Services
                   </Link>
+                  <a
+                    href="#comparison"
+                    className="block text-lg font-medium text-white hover:text-green-400 transition-colors duration-200 cursor-pointer"
+                    onClick={handleCompareClick}
+                  >
+                    Compare
+                  </a>
                   <Link
                     href="/blog"
                     className="block text-lg font-medium text-white hover:text-green-400 transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Blog
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="block text-lg font-medium text-white hover:text-green-400 transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    About US
                   </Link>
                   
                   <div className="pt-6 mt-6 border-t border-gray-800">

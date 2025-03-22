@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
+import GlobalBackground from "@/components/GlobalBackground";
+import LoadingProvider from "@/providers/LoadingProvider";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -17,8 +19,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Your Website",
-  description: "Your website description",
+  title: "Streamo Digital",
+  description: "Music distribution and artist services platform",
 };
 
 export default function RootLayout({
@@ -28,8 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${dmSans.variable}`}>
-      <body className="font-dm-sans">
-        {children}
+      <body className="font-dm-sans bg-black">
+        <LoadingProvider>
+          <GlobalBackground />
+          {children}
+        </LoadingProvider>
       </body>
     </html>
   );

@@ -5,14 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-500 via-black to-black"></div>
-        <div className="absolute top-1/3 -right-40 w-80 h-80 bg-green-500/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/3 -left-40 w-80 h-80 bg-green-500/10 rounded-full filter blur-3xl"></div>
-      </div>
-
+    <div className="min-h-screen text-white flex items-center justify-center relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
