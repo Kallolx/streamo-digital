@@ -56,52 +56,84 @@ const Features = () => {
 
   const features = [
     {
-      title: "Global Distribution",
-      description: "Reach millions of listeners worldwide with distribution to 150+ streaming platforms including Spotify, Apple Music, Amazon Music, and more.",
+      title: "Global Music Distribution",
+      description: "Distribute your music to over 200+ DSPs (like Spotify, Amazon, iTunes, and more) within 6–10 days and easily collect your earnings.",
       icon: (
         <div className="w-12 h-12 flex items-center justify-center">
-          <img src="/icons/earth.png" alt="Global Distribution" className="w-full h-full object-contain" />
+          <img src="/icons/earth.png" alt="Global Music Distribution" className="w-full h-full object-contain" />
         </div>
       ),
-      bgImage: "url('/images/feature-globe.jpg')",
-      color: "from-green-500/20 to-green-500/5",
-      progressWidth: "85%"
+      color: "from-green-500/20 to-green-500/5"
     },
     {
-      title: "Keep 100% Rights",
-      description: "Maintain complete ownership of your music. We never take any rights to your content, giving you full creative control and freedom.",
+      title: "Marketing Campaigns",
+      description: "We craft strategic marketing campaigns customized to your goals and budget — driving real engagement, visibility, and fan growth.",
       icon: (
         <div className="w-12 h-12 flex items-center justify-center">
-          <img src="/icons/crown.png" alt="Keep 100% Rights" className="w-full h-full object-contain" />
+          <img src="/icons/chart.png" alt="Tailored Marketing Campaigns" className="w-full h-full object-contain" />
         </div>
       ),
-      bgImage: "url('/images/feature-rights.jpg')",
-      color: "from-purple-500/20 to-purple-500/5",
-      progressWidth: "75%"
+      color: "from-purple-500/20 to-purple-500/5"
     },
     {
-      title: "Weekly Payments",
-      description: "Get paid weekly with transparent reporting. Track your streams and earnings in real-time with our intuitive analytics dashboard.",
+      title: "Analytics & Accounting",
+      description: "Access in-depth royalty analytics that show you exactly where your income is coming from — from which store, country, and more.",
       icon: (
         <div className="w-12 h-12 flex items-center justify-center">
-          <img src="/icons/visa.png" alt="Weekly Payments" className="w-full h-full object-contain" />
+          <img src="/icons/pie.png" alt="Analytics & Accounting" className="w-full h-full object-contain" />
         </div>
       ),
-      bgImage: "url('/images/feature-payments.jpg')",
-      color: "from-blue-500/20 to-blue-500/5",
-      progressWidth: "65%"
+      color: "from-blue-500/20 to-blue-500/5"
     },
     {
-      title: "Marketing & Promotion",
-      description: "Get featured on playlists, social media campaigns, and promotional opportunities to boost your music's visibility and reach new fans.",
+      title: "YouTube MCN Services",
+      description: "As a YouTube Certified Service Provider, we help you monetize your music — even if others have uploaded it — and make sure you get paid fairly.",
       icon: (
         <div className="w-12 h-12 flex items-center justify-center">
-          <img src="/icons/chart.png" alt="Marketing & Promotion" className="w-full h-full object-contain" />
+          <img src="/icons/play.png" alt="YouTube MCN Services" className="w-full h-full object-contain" />
         </div>
       ),
-      bgImage: "url('/images/feature-marketing.jpg')",
-      color: "from-red-500/20 to-red-500/5",
-      progressWidth: "90%"
+      color: "from-red-500/20 to-red-500/5"
+    },
+    {
+      title: "Music Publishing",
+      description: "From copyright registration to royalty collection and licensing, we handle every aspect of your music publishing with precision and care.",
+      icon: (
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/icons/plane.png" alt="Music Publishing Support" className="w-full h-full object-contain" />
+        </div>
+      ),
+      color: "from-yellow-500/20 to-yellow-500/5"
+    },
+    {
+      title: "A&R & Artist Network",
+      description: "Once you're part of Streamo, you'll get access to a network of talented artists, opening doors for collaboration and creative growth.",
+      icon: (
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/icons/music2.png" alt="A&R & Artist Network" className="w-full h-full object-contain" />
+        </div>
+      ),
+      color: "from-pink-500/20 to-pink-500/5"
+    },
+    {
+      title: "Label Services",
+      description: "Partner with our in-house Marketing & PR Team as you release music — we bring the record label experience directly to you, with none of the hassle.",
+      icon: (
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/icons/label.png" alt="Label Services" className="w-full h-full object-contain" />
+        </div>
+      ),
+      color: "from-indigo-500/20 to-indigo-500/5"
+    },
+    {
+      title: "Public Relations (PR)",
+      description: "Our PR team works closely with top-tier media outlets to boost your brand, tell your story, and build the visibility you deserve.",
+      icon: (
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/icons/public.png" alt="Public Relations (PR)" className="w-full h-full object-contain" />
+        </div>
+      ),
+      color: "from-cyan-500/20 to-cyan-500/5"
     }
   ]
 
@@ -127,8 +159,8 @@ const Features = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10 overflow-hidden">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Streamo Digital</span></h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">We provide everything you need to succeed in today's competitive music industry.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">What We Do at <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Streamo Digital</span></h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">We're a next-generation music distribution and artist services platform, providing all the tools and support you need — with full freedom, control, and a reliable partner by your side.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
@@ -152,31 +184,6 @@ const Features = () => {
                   <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">{feature.title}</h3>
                 </div>
                 <p className="text-sm text-gray-300 flex-grow">{feature.description}</p>
-                
-                {/* Call to action section */}
-                <div className="mt-3 sm:mt-4 md:mt-6 pt-2 sm:pt-3 md:pt-4">
-                  <div className="flex flex-col gap-1 sm:gap-2">
-                    <div className="text-xs text-gray-400">
-                      {index === 0 ? '150+ streaming platforms' : 
-                       index === 1 ? 'Full ownership guaranteed' : 
-                       index === 2 ? 'Transparent reporting' : 
-                       'Reach new audiences'}
-                    </div>
-                    <button 
-                      className={`mt-1 sm:mt-2 text-xs sm:text-sm font-medium py-1.5 sm:py-2 px-3 sm:px-4 rounded-md transition-colors ${
-                        index === 0 ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30' : 
-                        index === 1 ? 'bg-purple-500/20 text-purple-400 hover:bg-purple-500/30' : 
-                        index === 2 ? 'bg-blue-500/20 text-blue-400 hover:bg-blue-500/30' : 
-                        'bg-red-500/20 text-red-400 hover:bg-red-500/30'
-                      }`}
-                    >
-                      {index === 0 ? 'Explore Platforms' : 
-                       index === 1 ? 'Learn More' : 
-                       index === 2 ? 'View Demo' : 
-                       'Get Started'}
-                    </button>
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}

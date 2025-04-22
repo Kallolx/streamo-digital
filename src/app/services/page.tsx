@@ -11,76 +11,46 @@ import { usePageLoading } from '@/hooks/usePageLoading'
 // Define services with their descriptions and icons
 const services = [
   {
-    id: 'verification',
-    title: 'Verification',
-    description: 'Get official verification badges across all major platforms to establish authenticity and build trust with your audience. Our verification service ensures your profile stands out and helps fans find your official content.',
-    icon: '/icons/crown.png',
-    color: 'from-green-500/20 to-green-400/5',
-    buttonColor: 'bg-green-500/20 text-green-400 hover:bg-green-500/30'
-  },
-  {
-    id: 'unlimited-artists',
-    title: 'Unlimited Artists and Labels',
-    description: 'No restrictions on the number of artists or labels you can manage under a single account. Perfect for record labels, management companies, and distributors who need to handle multiple artist catalogs efficiently.',
+    id: 'unlimited-uploads',
+    title: 'Unlimited Uploads',
+    description: 'Distribute as much music and video contents as you want, to 150+ major streaming platforms – in as little as 7 days.',
     icon: '/icons/music.png',
-    color: 'from-blue-500/20 to-blue-400/5',
-    buttonColor: 'bg-blue-500/20 text-blue-400 hover:bg-blue-500/30'
+    color: 'from-green-500/20 to-green-400/5'
   },
   {
-    id: 'video-distribution',
-    title: 'Video Distribution',
-    description: 'Expand your reach beyond audio with our comprehensive video distribution service. Get your music videos on YouTube, Vevo, Apple Music, and other major video platforms to increase visibility and engagement.',
-    icon: '/icons/youtube.png',
-    color: 'from-red-500/20 to-red-400/5',
-    buttonColor: 'bg-red-500/20 text-red-400 hover:bg-red-500/30'
+    id: 'multiple-label',
+    title: 'Multiple Label',
+    description: 'Our platform allows labels to manage multiple artists under a single account, providing a seamless solution for handling large rosters.',
+    icon: '/icons/album.png',
+    color: 'from-blue-500/20 to-blue-400/5'
   },
   {
-    id: 'faster-release',
-    title: 'Faster Release',
-    description: 'Skip the waiting game with our expedited release process. While standard distributions can take weeks, our priority service ensures your music is available on all platforms within days, not weeks.',
-    icon: '/icons/reward.png',
-    color: 'from-yellow-500/20 to-yellow-400/5',
-    buttonColor: 'bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30'
+    id: '100-ownership',
+    title: '100% Ownership',
+    description: 'Streamo Digital Distribution does not own any stake in your music. You own all the rights to your music.',
+    icon: '/icons/crown.png',
+    color: 'from-purple-600/20 to-purple-500/5'
   },
   {
-    id: 'social-monetization',
-    title: 'Social Monetization',
-    description: 'Generate revenue from social media platforms like TikTok, Instagram, and Facebook when your music is used in videos, reels, and stories. Capture value from viral trends and user-generated content featuring your tracks.',
-    icon: '/icons/instagram.png',
-    color: 'from-pink-500/20 to-pink-400/5',
-    buttonColor: 'bg-pink-500/20 text-pink-400 hover:bg-pink-500/30'
-  },
-  {
-    id: 'copyright-royalties',
-    title: '100% Copyright Royalties',
-    description: 'Keep 100% of your copyright royalties. Unlike traditional record deals, we never take ownership of your creative work. You maintain complete control of your music while still accessing professional distribution services.',
-    icon: '/icons/visa.png',
-    color: 'from-green-600/20 to-green-500/5',
-    buttonColor: 'bg-green-600/20 text-green-500 hover:bg-green-600/30'
-  },
-  {
-    id: 'monthly-payouts',
-    title: 'Monthly Payouts in All Gateways',
-    description: 'Receive your earnings monthly through a wide range of payment methods including PayPal, direct bank transfer, cryptocurrency, and more. Flexible payment options ensure you can access your revenue regardless of your location.',
-    icon: '/icons/visa.png',
-    color: 'from-blue-600/20 to-blue-500/5',
-    buttonColor: 'bg-blue-600/20 text-blue-500 hover:bg-blue-600/30'
-  },
-  {
-    id: 'whitelisting',
-    title: 'Whitelisting',
-    description: 'Gain priority consideration for playlists, features, and promotional opportunities across streaming platforms. Our whitelisting service puts your releases at the front of the line for editorial reviews and algorithmic boosts.',
-    icon: '/icons/spotify.png',
-    color: 'from-purple-600/20 to-purple-500/5',
-    buttonColor: 'bg-purple-600/20 text-purple-500 hover:bg-purple-600/30'
-  },
-  {
-    id: 'maximum-revenue',
-    title: 'Maximum Revenue',
-    description: 'Optimize your earnings with our comprehensive revenue maximization strategies. We identify and capture income from all available sources including streaming, sync licensing, performance royalties, and mechanical royalties.',
+    id: 'monthly-royalties',
+    title: 'Monthly Royalties Reporting',
+    description: 'Access comprehensive monthly royalty reports to help you track your earnings from various stores.',
     icon: '/icons/chart.png',
-    color: 'from-red-600/20 to-red-500/5',
-    buttonColor: 'bg-red-600/20 text-red-500 hover:bg-red-600/30'
+    color: 'from-yellow-500/20 to-yellow-400/5'
+  },
+  {
+    id: 'priority-service',
+    title: 'Priority Customer Service',
+    description: 'Get priority customer service from our dedicated team, ensuring that your queries and issues are resolved promptly.',
+    icon: '/icons/public.png',
+    color: 'from-pink-500/20 to-pink-400/5'
+  },
+  {
+    id: 'analytics-accounting',
+    title: 'Analytics & Accounting',
+    description: 'Our in-depth royalty analytics provide you with a detailed understanding of where your income is coming from.',
+    icon: '/icons/pie.png',
+    color: 'from-green-600/20 to-green-500/5'
   }
 ]
 
@@ -108,10 +78,10 @@ export default function ServicesPage() {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-white">
-                  Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Services</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Everything You Need</span> in One Place
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 mb-6">
-                  Comprehensive solutions to help independent artists and labels succeed in the music industry. Keep 100% of your rights while accessing professional services.
+                  You pushed your music locally. Now, let's distribute your music and make you global.
                 </p>
                 <motion.button
                   onClick={(e) => {
@@ -131,11 +101,18 @@ export default function ServicesPage() {
           {/* Services Grid */}
           <section className="py-12 md:py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+              <div className="mb-10 text-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-white">OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Services</span> we provide</h2>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {services.map((service, index) => (
                   <motion.div
                     key={service.id}
                     className="bg-black/30 backdrop-blur-sm rounded-xl border border-gray-700/30 overflow-hidden hover:bg-black/40 transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
                     <div className="p-6">
@@ -145,12 +122,7 @@ export default function ServicesPage() {
                         </div>
                         <h3 className="text-xl font-bold text-white">{service.title}</h3>
                       </div>
-                      <p className="text-gray-300 mb-6 text-sm">{service.description}</p>
-                      <button 
-                        className={`text-sm font-medium py-2 px-4 rounded-md transition-colors ${service.buttonColor}`}
-                      >
-                        Learn More
-                      </button>
+                      <p className="text-gray-300 text-sm">{service.description}</p>
                     </div>
                   </motion.div>
                 ))}

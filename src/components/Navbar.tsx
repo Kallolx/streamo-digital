@@ -96,32 +96,34 @@ const Navbar = () => {
               href="/services" 
               className="text-white hover:text-green-400 transition-colors duration-200 text-base font-medium"
             >
-              Services
+              Features
             </Link>
             <a 
-              href="#comparison" 
+              href="/about" 
               onClick={handleCompareClick}
               className="text-white hover:text-green-400 transition-colors duration-200 text-base font-medium cursor-pointer"
             >
-              Compare
+              About Us
             </a>
             <Link 
-              href="/blog" 
+              href="https://www.streamodigital.com/about-us-2/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white hover:text-green-400 transition-colors duration-200 text-base font-medium"
             >
-              Blog
+              Contact
             </Link>
           </div>
 
           {/* Apply Button - Right */}
           <div className="hidden md:flex items-center">
             <Link 
-              href="https://apply.streamodigital.com/" 
+              href="https://backstage.streamodigital.com/en/" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white font-bold px-6 py-2.5 rounded-full text-base hover:bg-green-500 transition-colors duration-200"
             >
-              Apply
+              Client Login
             </Link>
           </div>
 
@@ -208,7 +210,7 @@ const Navbar = () => {
                     className="block text-lg font-medium text-white hover:text-green-400 transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Services
+                    Features
                   </Link>
                   <a
                     href="#comparison"
@@ -227,13 +229,13 @@ const Navbar = () => {
                   
                   <div className="pt-6 mt-6 border-t border-gray-800">
                     <Link
-                      href="https://apply.streamodigital.com/"
+                      href="https://backstage.streamodigital.com/en/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-green-500 transition-colors duration-200 text-center"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Apply
+                      Client Login
                     </Link>
                   </div>
                 </div>
