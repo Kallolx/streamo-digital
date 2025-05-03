@@ -12,8 +12,8 @@ const LOADING_PATHS = [
 ];
 
 // Loading durations (in ms)
-const INITIAL_LOAD_DURATION = 2000; // First load of the session
-const PAGE_LOAD_DURATION = 1500;    // Subsequent page loads
+const INITIAL_LOAD_DURATION = 1000; // First load of the session
+const PAGE_LOAD_DURATION = 500;    // Subsequent page loads
 
 export const usePageLoading = (customDuration?: number) => {
   const { setIsLoading } = useLoading();

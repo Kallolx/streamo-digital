@@ -13,11 +13,10 @@ const Pricing = () => {
       period: "Forever",
       description: "Perfect for beginners looking to distribute their first releases",
       features: [
-        "Distribution to 2 platforms",
-        "Basic analytics",
-        "Standard release timeline",
-        "Email support",
-        "Keep 85% of your royalties"
+        "Upload one song per month",
+        "You keep 85% of royalties",
+        "24 hour customer service",
+        "No customize label name",
       ],
       cta: "Get Started",
       popular: true,
@@ -30,13 +29,10 @@ const Pricing = () => {
       period: "per year",
       description: "For serious artists ready to expand their reach",
       features: [
-        "Distribution to 50+ platforms",
-        "Advanced analytics dashboard",
-        "Priority release timeline",
-        "24/7 email support",
-        "Keep 90% of your royalties",
-        "Pre-save campaigns",
-        "Spotify canvas support"
+        "Distribution and Copyright on all major 250+ platforms.",
+        "Unlimited Uploads.",
+        "Dedicated artist support, Live Chat.",
+        "You keep 100% of royalties.",
       ],
       cta: "Choose Plan",
       popular: false,
@@ -49,15 +45,10 @@ const Pricing = () => {
       period: "per year",
       description: "Complete solution for labels managing multiple artists",
       features: [
-        "Distribution to 150+ platforms",
-        "Label analytics dashboard",
-        "Express release timeline",
+        "Tailored service.",
+        "Dedicated account management.",
         "Priority 24/7 support",
-        "Keep 95% of your royalties",
-        "Unlimited pre-save campaigns",
-        "Spotify canvas & playlist pitching",
-        "Multiple artist management",
-        "Bulk upload releases"
+        "Pitching assistance.",
       ],
       cta: "Choose Plan",
       popular: false,
@@ -163,32 +154,6 @@ const Pricing = () => {
           ))}
         </div>
         
-        <div className="mt-8 sm:mt-12 text-center">
-          <div className="bg-gradient-to-br from-black/60 to-green-950/20 backdrop-blur-md p-4 sm:p-6 rounded-2xl max-w-3xl mx-auto">
-            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Get Started?</span></h3>
-            <p className="text-gray-300 text-sm mb-4">Join thousands of artists and labels who trust Streamo Digital with their music.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a 
-                href="https://apply.streamodigital.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 text-white font-bold px-5 py-2 rounded-lg shadow-md hover:shadow-green-500/25 transition-all duration-300 text-sm text-center"
-              >
-                Start For Free
-              </a>
-              <a 
-                href="https://apply.streamodigital.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-transparent border border-green-500/50 hover:border-green-400 text-white font-bold px-5 py-2 rounded-lg shadow-md hover:shadow-green-500/10 transition-all duration-300 text-sm text-center"
-              >
-                Schedule a Demo
-              </a>
-            </div>
-          </div>
-          
-         
-        </div>
       </div>
     </section>
   )

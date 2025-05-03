@@ -25,7 +25,7 @@ const GlobalBackground = () => {
   return (
     <>
       {/* Fixed overlay with gradient */}
-      <div className="fixed inset-0 bg-black/60 z-0"></div>
+      <div className="fixed inset-0 bg-black/60 -z-[1]"></div>
       <div className="fixed inset-0 bg-gradient-to-r from-green-500/20 to-white/5 z-10 pointer-events-none"></div>
     </>
   );

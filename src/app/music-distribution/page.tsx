@@ -6,7 +6,6 @@ import MusicDistributionForm from '@/components/MusicDistributionForm'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { handleHashScroll, scrollToSection } from '@/utils/scrollUtils'
-import { usePageLoading } from '@/hooks/usePageLoading'
 
 const allPlatforms = [
   {
@@ -70,14 +69,6 @@ const allPlatforms = [
 export default function MusicDistributionPage() {
   const [showAllPlatforms, setShowAllPlatforms] = useState(false)
   const displayedPlatforms = showAllPlatforms ? allPlatforms : allPlatforms.slice(0, 6)
-
-  // Initialize page loading
-  usePageLoading();
-  
-  // Handle hash scrolling when the page loads
-  useEffect(() => {
-    handleHashScroll();
-  }, []);
 
   // Handle Compare button click
   const handleCompareClick = (event: React.MouseEvent) => {

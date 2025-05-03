@@ -11,7 +11,7 @@ interface LoadingScreenProps {
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({
   onLoadingComplete,
-  duration = 2000, // 2 seconds default
+  duration = 500, // 2 seconds default
 }) => {
   const [progress, setProgress] = useState(0);
   
@@ -22,7 +22,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
           clearInterval(interval);
           return 100;
         }
-        return prev + 2; // Slower increment for smoother animation
+        return prev + 1; // Slower increment for smoother animation
       });
     }, duration / 50); // More steps for smoother animation
 

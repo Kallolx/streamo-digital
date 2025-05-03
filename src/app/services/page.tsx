@@ -134,7 +134,7 @@ export default function ServicesPage() {
           <section className="py-12 md:py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
               <motion.div 
-                className="bg-gradient-to-br from-black/60 to-black/20 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/10 text-center"
+                className="bg-gradient-to-br from-black/60 to-black/20 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8  text-center"
               >
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Ready to Take Your Music Career to the Next Level?</h2>
                 <p className="text-gray-300 mb-6 max-w-2xl mx-auto">

@@ -7,19 +7,8 @@ import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
 import FaqContact from "@/components/FaqContact";
 import Comparison from "@/components/comparison";
-import { useEffect } from "react";
-import { handleHashScroll } from "@/utils/scrollUtils";
-import { usePageLoading } from "@/hooks/usePageLoading";
 
 export default function Home() {
-  // Initialize page loading
-  usePageLoading();
-  
-  // Handle hash scrolling when the page loads
-  useEffect(() => {
-    handleHashScroll();
-  }, []);
-
   return (
     <main className="min-h-screen text-white relative overflow-x-hidden w-full">
       <div className="relative z-20">

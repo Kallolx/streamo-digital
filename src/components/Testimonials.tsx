@@ -182,38 +182,6 @@ const Testimonials = () => {
               </div>
             </div>
           </div>
-
-          {/* Achievements Section */}
-          <div>
-            <div className="bg-gradient-to-t from-black/60 to-black/20 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-10 lg:p-16">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8 md:mb-10 text-white text-center">Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Achievements</span></h3>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-                {achievements.map((achievement, index) => (
-                  <motion.div
-                    key={index}
-                    className="text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                      {achievement.icon}
-                    </div>
-                    <h4 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">{achievement.number}</h4>
-                    <p className="text-sm sm:text-base text-gray-300">{achievement.text}</p>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <div className="mt-10 sm:mt-12 md:mt-16 text-center">
-                <button className="bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-green-500 transition-colors duration-200 shadow-lg hover:shadow-green-500/20">
-                 <a href="https://apply.streamodigital.com/" target="_blank" rel="noopener noreferrer"> Start Your Journey Today</a>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

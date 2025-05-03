@@ -17,7 +17,7 @@ export function AnimatedCircularProgressBar({
   gaugeSecondaryColor,
   className,
 }: AnimatedCircularProgressBarProps) {
-  const circumference = 2 * Math.PI * 45;
+  const circumference = 4 * Math.PI * 45;
   const percentPx = circumference / 100;
   const currentPercent = Math.round(((value - min) / (max - min)) * 100);
 
