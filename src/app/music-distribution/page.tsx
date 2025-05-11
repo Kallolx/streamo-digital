@@ -15,16 +15,16 @@ const allPlatforms = [
     features: ['Playlist Pitching', 'Artist Profile', 'Real-time Analytics']
   },
   {
-    name: 'Apple Music',
-    icon: '/icons/itunes.png',
-    color: '#FA466A',
-    features: ['Connect Integration', 'Artist Page', 'Trending Charts']
+    name: 'Gaana',
+    icon: '/icons/ganna.png',
+    color: '#FF0092',
+    features: ['Featured Playlists', 'Artist Page', 'Trending Charts']
   },
   {
-    name: 'TikTok',
-    icon: '/icons/tiktok.png',
-    color: '#000000',
-    features: ['Sound Library', 'Creator Tools', 'Viral Tracking']
+    name: 'Hungama',
+    icon: '/icons/hungama.png',
+    color: '#1F93FF',
+    features: ['Artist Marketing', 'Editorial Playlists', 'Trending Now']
   },
   {
     name: 'YouTube Music',
@@ -33,16 +33,58 @@ const allPlatforms = [
     features: ['Content ID', 'Artist Channel', 'Analytics Suite']
   },
   {
-    name: 'Instagram',
-    icon: '/icons/instagram.png',
-    color: '#E4405F',
-    features: ['Reels Integration', 'Story Music', 'Content ID']
+    name: 'iHeart Radio',
+    icon: '/icons/iheart.png',
+    color: '#C6002B',
+    features: ['Radio Airplay', 'Artist Radio', 'Playlist Features']
   },
   {
-    name: 'Facebook',
-    icon: '/icons/facebook.png',
-    color: '#1877F2',
-    features: ['Sound Collection', 'Creator Studio', 'Monetization']
+    name: 'Resso',
+    icon: '/icons/resso.png',
+    color: '#131314',
+    features: ['Social Sharing', 'Lyrics Display', 'User Engagement']
+  },
+  {
+    name: 'iTunes',
+    icon: '/icons/itunes.png',
+    color: '#FB5BC5',
+    features: ['iTunes Store', 'Charts Ranking', 'Global Reach']
+  },
+  {
+    name: 'Jio Saavn',
+    icon: '/icons/jio.png',
+    color: '#1EB9D0',
+    features: ['Pro Subscription', 'Original Programs', 'Featured Playlists']
+  },
+  {
+    name: 'Saavn',
+    icon: '/icons/saavn.png',
+    color: '#2BC5B4',
+    features: ['Artist Originals', 'Editorial Playlists', 'Podcast Integration']
+  },
+  {
+    name: 'Amazon Music',
+    icon: '/icons/amazon.png',
+    color: '#00A8E1',
+    features: ['HD Streaming', 'Alexa Integration', 'Prime Music']
+  },
+  {
+    name: 'TikTok',
+    icon: '/icons/tiktok.png',
+    color: '#000000',
+    features: ['Sound Library', 'Creator Tools', 'Viral Tracking']
+  },
+  {
+    name: 'Deezer',
+    icon: '/icons/deezer.png',
+    color: '#FEAA2D',
+    features: ['Flow Technology', 'Editorial Support', 'HiFi Quality']
+  },
+  {
+    name: 'Anghami',
+    icon: '/icons/anghami.png',
+    color: '#8A5CFF',
+    features: ['Regional Focus', 'Exclusive Content', 'Video Support']
   },
   {
     name: 'SoundCloud',
@@ -51,24 +93,34 @@ const allPlatforms = [
     features: ['Direct Upload', 'Stats Pro', 'Monetization']
   },
   {
-    name: 'Twitter',
-    icon: '/icons/twitter.png',
-    color: '#3668FF',
-    features: ['Music Genome', 'Artist Marketing', 'Listener Stats']
+    name: 'Apple Music',
+    icon: '/icons/itunes.png',
+    color: '#FA466A',
+    features: ['Connect Integration', 'Artist Page', 'Editorial Playlists']
   },
-
-  
   {
-    name: 'Gaana',
-    icon: '/icons/ganna.png',
-    color: '#FF0092',
-    features: ['Flow Technology', 'Artist Insights', 'Playlist Submission']
+    name: 'Boomplay',
+    icon: '/icons/boomplay.png',
+    color: '#0273F5',
+    features: ['African Markets', 'Chart Rankings', 'Artist Spotlight']
+  },
+  {
+    name: 'Shazam',
+    icon: '/icons/shazam.png',
+    color: '#0088FF',
+    features: ['Music Discovery', 'Charts', 'Artist Tracking']
+  },
+  {
+    name: 'Facebook',
+    icon: '/icons/facebook.png',
+    color: '#1877F2',
+    features: ['Sound Collection', 'Creator Studio', 'Monetization']
   },
 ]
 
 export default function MusicDistributionPage() {
   const [showAllPlatforms, setShowAllPlatforms] = useState(false)
-  const displayedPlatforms = showAllPlatforms ? allPlatforms : allPlatforms.slice(0, 6)
+  const displayedPlatforms = showAllPlatforms ? allPlatforms : allPlatforms.slice(0, 9)
 
   // Handle Compare button click
   const handleCompareClick = (event: React.MouseEvent) => {
@@ -92,6 +144,14 @@ export default function MusicDistributionPage() {
                 <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
                   Get your music on all major streaming platforms while keeping 100% of your rights and royalties. One-time fee, no hidden costs.
                 </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                  <img src="/icons/spotify.png" alt="Spotify" className="h-8 md:h-10" />
+                  <img src="/icons/itunes.png" alt="Apple Music" className="h-8 md:h-10" />
+                  <img src="/icons/youtube.png" alt="YouTube Music" className="h-8 md:h-10" />
+                  <img src="/icons/ganna.png" alt="Gaana" className="h-8 md:h-10" />
+                  <img src="/icons/amazon.png" alt="Amazon Music" className="h-8 md:h-10" />
+                  <img src="/icons/tiktok.png" alt="TikTok" className="h-8 md:h-10" />
+                </div>
               </div>
             </div>
           </div>
