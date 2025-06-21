@@ -304,9 +304,169 @@ export default function MusicDistributionPage() {
           {/* Form Section */}
           <section className="py-8 md:py-16">
             <div className="container mx-auto px-3 sm:px-6 lg:px-8 max-w-6xl">
+              {/* Global Reach Description */}
+              <div className="mb-8 md:mb-12">
+                <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-green-500/20">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">Global Reach</h3>
+                      <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                        Music distribution allows artists to reach a global audience. With the advent of digital platforms, music can be accessed from virtually anywhere in the world. By distributing their music through platforms like Spotify, Apple Music, TikTok, Facebook, Resso, Amazon, and iTunes, artists can tap into millions of listeners worldwide. This global reach provides exposure and opportunities for artists to connect with diverse audiences, expanding their fan base and increasing their visibility.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Music Distribution Form */}
               <div className="bg-gradient-to-br from-black/60 to-black/20 backdrop-blur-md rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10">
                 <MusicDistributionForm />
               </div>
+            </div>
+          </section>
+
+          {/* Benefits Sections */}
+          <section className="py-8 md:py-16">
+            <div className="container mx-auto px-3 sm:px-6 lg:px-8 max-w-6xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-white">
+                Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-white">Streamo Digital</span>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                {/* Monetization */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-green-500/20 hover:border-green-500/40 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-3">Monetization</h3>
+                      <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                        Distribution platforms like Streamo Digital enable artists to monetize their music. Through streaming services and digital downloads, artists can earn royalties for each play or purchase of their songs. This revenue stream is essential for sustaining a career in music, allowing artists to invest in their craft, cover production costs, and generate income from their creative work.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Accessibility */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-3">Accessibility</h3>
+                      <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                        Music distribution platforms make music easily accessible to listeners. Gone are the days when physical distribution channels like CDs and vinyl were the primary means of accessing music. Today, streaming services offer instant access to vast libraries of music at the touch of a button, fostering engagement and loyalty.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Flexibility and Control */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-3">Flexibility & Control</h3>
+                      <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                        Streamo Digital empowers artists with flexibility and control over their music. The platform allows artists to upload their tracks, set pricing, and manage their catalog according to their preferences. This level of control enables artists to tailor their distribution strategy to suit their artistic vision and business objectives.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Ease of Use */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-3">Ease of Use</h3>
+                      <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                        Streamo Digital offers a user-friendly platform that simplifies the music distribution process. From uploading tracks to tracking performance metrics, the platform is designed to be intuitive and accessible. This ease of use ensures that artists can focus on creating music while Streamo Digital handles the complexities of distribution and monetization.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Call to Action */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="mt-12 md:mt-16 text-center"
+              >
+                <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-green-500/20">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
+                    Ready to Share Your Music with the World?
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-300 mb-6 max-w-3xl mx-auto">
+                    By leveraging Streamo Digital's global reach, monetization opportunities, accessibility, flexibility, and ease of use, artists can turn their musical dreams into reality and connect with audiences worldwide.
+                  </p>
+                  <motion.button
+                    onClick={() => scrollToSection('form')}
+                    className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-b from-green-300 via-green-600 to-green-700 text-white rounded-full font-bold transition-all duration-200 shadow-lg hover:shadow-green-500/20 text-base sm:text-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Start Your Distribution Journey
+                  </motion.button>
+                </div>
+              </motion.div>
             </div>
           </section>
         </div>
